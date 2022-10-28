@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".news.News1Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_view_news_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:text="Tiêu đề"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_view_news_date"
+            app:layout_constraintStart_toStartOf="@id/text_view_news_title"
+            app:layout_constraintTop_toBottomOf="@id/text_view_news_title"
+            android:text="08/08/2022"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/image_view_news"
+            android:src="@drawable/banner_1"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/text_view_news_title"
+            app:layout_constraintTop_toBottomOf="@id/text_view_news_date"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:id="@+id/text_view_news_content"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:text="Nội dung"
+            app:layout_constraintStart_toStartOf="@id/text_view_news_title"
+            app:layout_constraintTop_toBottomOf="@id/image_view_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

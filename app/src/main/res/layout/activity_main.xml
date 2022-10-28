@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/constraint_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/highland"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/image_highland"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                app:layout_constraintDimensionRatio="2000:640"
+                android:src="@drawable/banner_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_highland"
+                android:id="@+id/image_view_banner"
+                android:layout_width="0dp"
+                android:layout_height="200dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint_layout_1"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+<!--            Sản phẩm-->
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/text_view_all_product"
+                android:textColor="#FF4F34"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Tất cả sản phẩm >"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/layout_button"
+                android:id="@+id/button_coffee"
+                android:text="Cà phê"
+                android:textColor="#7E5E5D"
+                app:layout_constraintTop_toBottomOf="@id/text_view_all_product"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="65dp"
+                android:layout_width="110dp"
+                android:layout_height="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/layout_button"
+                android:id="@+id/button_freeze"
+                android:text="Freeze"
+                android:textColor="#379E3B"
+                app:layout_constraintTop_toTopOf="@id/button_coffee"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="65dp"
+                android:layout_width="110dp"
+                android:layout_height="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/layout_button"
+                android:id="@+id/button_tea"
+                android:text="Trà"
+                android:textColor="#A19100"
+                app:layout_constraintTop_toBottomOf="@id/button_coffee"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@id/button_coffee"
+                android:layout_width="110dp"
+                android:layout_height="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/layout_button"
+                android:id="@+id/button_difference"
+                android:text="Khác"
+                android:textColor="#555555"
+                app:layout_constraintTop_toTopOf="@id/button_tea"
+                app:layout_constraintEnd_toEndOf="@id/button_freeze"
+                android:layout_width="110dp"
+                android:layout_height="50dp"/>
+
+<!--            Tin mới-->
+            <TextView
+                android:id="@+id/text_view_news"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:text="Tin mới nhất"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_tea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_view_news_all"
+                android:layout_marginTop="50dp"
+                android:textStyle="italic"
+                android:textSize="18sp"
+                android:text="Xem toàn bộ"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/text_view_news"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:id="@+id/image_view_news_1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_news"
+                android:layout_width="140dp"
+                android:layout_height="80dp"/>
+
+            <TextView
+
+                android:textSize="20sp"
+                android:id="@+id/text_view_news_1"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:text="Trà sen vàng - Ô long thanh mát, sen vàng ngọt thơm"
+                app:layout_constraintStart_toEndOf="@+id/image_view_news_1"
+                app:layout_constraintTop_toTopOf="@id/image_view_news_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="08/10/2022"
+                app:layout_constraintStart_toStartOf="@id/text_view_news_1"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            -----
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/image_view_news_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_news_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_news_1"
+                android:layout_width="140dp"
+                android:layout_height="80dp"/>
+
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/text_view_news_2"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:text="Làm gì thì làm, cà phê cái đã!"
+                app:layout_constraintStart_toEndOf="@+id/image_view_news_2"
+                app:layout_constraintTop_toTopOf="@id/image_view_news_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="08/10/2022"
+                app:layout_constraintStart_toStartOf="@id/text_view_news_2"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            -----
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/image_view_news_3"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_news_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_news_2"
+                android:layout_width="140dp"
+                android:layout_height="80dp"/>
+
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/text_view_news_3"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:text="Hè vui phơi phới cùng bộ 3 trà nhiệt đới"
+                app:layout_constraintStart_toEndOf="@+id/image_view_news_3"
+                app:layout_constraintTop_toTopOf="@id/image_view_news_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="01/07/2022"
+                app:layout_constraintStart_toStartOf="@id/text_view_news_3"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+<!--            Hệ thống cửa hàng-->
+            <TextView
+                android:id="@+id/text_view_show_store"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_view_news_3"
+                android:text="Hệ thống cửa hàng 🔽"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_view_address"
+                android:visibility="gone"
+                android:text="
+497 Hòa Hảo, P.7, Q.10, TP.HCM\n
+ ☎ (028) 7100 0497\n\n
+417-419 Điện Biên Phủ, P. 25, Q. Bình Thạnh, TP.HCM\n
+ ☎ (028) 7100 0417\n\n
+31 Lê Duẩn, Phường Bến Nghé, Quận 1, TP.HCM\n
+ ☎ (028) 7100 0031"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_show_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
