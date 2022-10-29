@@ -77,6 +77,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         dialog.dismiss();
+                        count = 1;
                     }
                 });
 
