@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.apptrasua.Product;
@@ -44,8 +46,8 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
 
         productAdapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
 
-            TextView tvNumberOfProducts, tvNumberDown, tvNumberUp, tvPriceTotal;
-            Button btnPay;
+            TextView tvNumberOfProducts, tvNumberDown, tvNumberUp, tvPriceTotal, tvPay, tvClose;
+            ProgressBar pgbLoading;
             int count = 1;
 
             @Override
@@ -54,7 +56,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
-//                dialog.setCancelable(false);
+                dialog.setCancelable(false);
 
                 Window window = dialog.getWindow();
 
@@ -67,7 +69,16 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 tvNumberDown = dialog.findViewById(R.id.text_view_number_down);
                 tvNumberUp = dialog.findViewById(R.id.text_view_number_up);
                 tvPriceTotal = dialog.findViewById(R.id.text_view_price_total);
-                btnPay = dialog.findViewById(R.id.button_pay);
+                tvPay = dialog.findViewById(R.id.text_view_pay);
+                tvClose = dialog.findViewById(R.id.text_view_close);
+                pgbLoading = dialog.findViewById(R.id.progressBar);
+
+                tvClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
 
                 tvNumberDown.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -87,10 +98,29 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     }
                 });
 
-                btnPay.setOnClickListener(new View.OnClickListener() {
+                tvPay.setOnClickListener(new View.OnClickListener() {
+                    boolean isRun = true;
+
                     @Override
                     public void onClick(View view) {
-                        btnPay.setText("✅\nBạn đã thanh toán thành công");
+                        tvNumberDown.setEnabled(false);
+                        tvNumberUp.setEnabled(false);
+                        tvClose.setEnabled(false);
+                        if (isRun) {
+                            tvPay.setVisibility(View.INVISIBLE);
+                            pgbLoading.setVisibility(View.VISIBLE);
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    pgbLoading.setVisibility(View.INVISIBLE);
+                                    tvPay.setVisibility(View.VISIBLE);
+                                    tvPay.setText("✅\nBạn đã thanh toán thành công");
+                                    isRun = false;
+                                    tvClose.setEnabled(true);
+                                }
+                            }, 2000);
+                        }
                     }
                 });
                 dialog.show();
