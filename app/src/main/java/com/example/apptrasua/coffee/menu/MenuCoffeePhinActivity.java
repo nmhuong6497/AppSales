@@ -55,6 +55,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
             @Override
             public void onClick(int position) {
 
+
                 Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
@@ -75,21 +76,24 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 btnPay = dialog.findViewById(R.id.button_pay);
                 pgbLoading = dialog.findViewById(R.id.progressBar);
 
+                count = 1;
+                tvNumberOfProducts.setText(count + "");
                 tvClose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         dialog.dismiss();
-                        count = 1;
                     }
                 });
 
+                tvNumberDown.setEnabled(false);
                 tvNumberDown.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (count > 1) {
-                            count = count - 1;
-                            tvNumberOfProducts.setText(count + "");
-                            tvPriceTotal.setText(price * count + ".000đ");
+                        count = count - 1;
+                        tvNumberOfProducts.setText(count + "");
+                        tvPriceTotal.setText(price * count + ".000đ");
+                        if (count < 2) {
+                            tvNumberDown.setEnabled(false);
                         }
                     }
                 });
@@ -100,33 +104,31 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                         count = count + 1;
                         tvNumberOfProducts.setText(count + "");
                         tvPriceTotal.setText(price * count + ".000đ");
+                        if (count > 1) {
+                            tvNumberDown.setEnabled(true);
+                        }
                     }
                 });
 
                 btnPay.setOnClickListener(new View.OnClickListener() {
-                    boolean isRun = true;
-
                     @Override
                     public void onClick(View view) {
-                        if (isRun) {
-                            dialog.setCancelable(false);
-                            tvNumberDown.setEnabled(false);
-                            tvNumberUp.setEnabled(false);
-                            tvClose.setEnabled(false);
-                            btnPay.setVisibility(View.INVISIBLE);
-                            pgbLoading.setVisibility(View.VISIBLE);
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    pgbLoading.setVisibility(View.INVISIBLE);
-                                    tvPay.setVisibility(View.VISIBLE);
-                                    isRun = false;
-                                    tvClose.setEnabled(true);
-                                    dialog.setCancelable(true);
-                                }
-                            }, 1500);
-                        }
+                        dialog.setCancelable(false);
+                        tvNumberDown.setEnabled(false);
+                        tvNumberUp.setEnabled(false);
+                        tvClose.setEnabled(false);
+                        btnPay.setVisibility(View.GONE);
+                        pgbLoading.setVisibility(View.VISIBLE);
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                pgbLoading.setVisibility(View.GONE);
+                                tvPay.setVisibility(View.VISIBLE);
+                                tvClose.setEnabled(true);
+                                dialog.setCancelable(true);
+                            }
+                        }, 1500);
                     }
                 });
                 dialog.show();
