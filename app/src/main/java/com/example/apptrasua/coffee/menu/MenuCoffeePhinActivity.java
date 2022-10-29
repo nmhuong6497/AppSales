@@ -47,8 +47,10 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
         productAdapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
 
             TextView tvNumberOfProducts, tvNumberDown, tvNumberUp, tvPriceTotal, tvPay, tvClose;
+            Button btnPay;
             ProgressBar pgbLoading;
             int count = 1;
+            int price = 29;
 
             @Override
             public void onClick(int position) {
@@ -56,7 +58,6 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
-                dialog.setCancelable(false);
 
                 Window window = dialog.getWindow();
 
@@ -71,6 +72,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 tvPriceTotal = dialog.findViewById(R.id.text_view_price_total);
                 tvPay = dialog.findViewById(R.id.text_view_pay);
                 tvClose = dialog.findViewById(R.id.text_view_close);
+                btnPay = dialog.findViewById(R.id.button_pay);
                 pgbLoading = dialog.findViewById(R.id.progressBar);
 
                 tvClose.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +86,10 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 tvNumberDown.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (count >= 1) {
+                        if (count > 1) {
                             count = count - 1;
                             tvNumberOfProducts.setText(count + "");
+                            tvPriceTotal.setText(price * count + ".000đ");
                         }
                     }
                 });
@@ -96,19 +99,21 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         count = count + 1;
                         tvNumberOfProducts.setText(count + "");
+                        tvPriceTotal.setText(price * count + ".000đ");
                     }
                 });
 
-                tvPay.setOnClickListener(new View.OnClickListener() {
+                btnPay.setOnClickListener(new View.OnClickListener() {
                     boolean isRun = true;
 
                     @Override
                     public void onClick(View view) {
-                        tvNumberDown.setEnabled(false);
-                        tvNumberUp.setEnabled(false);
-                        tvClose.setEnabled(false);
                         if (isRun) {
-                            tvPay.setVisibility(View.INVISIBLE);
+                            dialog.setCancelable(false);
+                            tvNumberDown.setEnabled(false);
+                            tvNumberUp.setEnabled(false);
+                            tvClose.setEnabled(false);
+                            btnPay.setVisibility(View.INVISIBLE);
                             pgbLoading.setVisibility(View.VISIBLE);
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
@@ -116,11 +121,11 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                                 public void run() {
                                     pgbLoading.setVisibility(View.INVISIBLE);
                                     tvPay.setVisibility(View.VISIBLE);
-                                    tvPay.setText("✅\nBạn đã thanh toán thành công");
                                     isRun = false;
                                     tvClose.setEnabled(true);
+                                    dialog.setCancelable(true);
                                 }
-                            }, 2000);
+                            }, 1500);
                         }
                     }
                 });
