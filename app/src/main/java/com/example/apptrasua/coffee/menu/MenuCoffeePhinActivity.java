@@ -51,11 +51,6 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
             @Override
             public void onClick(int position) {
 
-                tvNumberOfProducts = findViewById(R.id.text_view_number_of_products);
-                tvNumberDown = findViewById(R.id.text_view_number_down);
-                tvNumberUp = findViewById(R.id.text_view_number_up);
-                tvPriceTotal = findViewById(R.id.text_view_price_total);
-
                 Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
@@ -68,24 +63,36 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
                 }
 
+                tvNumberOfProducts = dialog.findViewById(R.id.text_view_number_of_products);
+                tvNumberDown = dialog.findViewById(R.id.text_view_number_down);
+                tvNumberUp = dialog.findViewById(R.id.text_view_number_up);
+                tvPriceTotal = dialog.findViewById(R.id.text_view_price_total);
+                btnPay = dialog.findViewById(R.id.button_pay);
 
+                tvNumberDown.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (count >= 1) {
+                            count = count - 1;
+                            tvNumberOfProducts.setText(count + "");
+                        }
+                    }
+                });
 
+                tvNumberUp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        count = count + 1;
+                        tvNumberOfProducts.setText(count + "");
+                    }
+                });
 
-//                tvNumberDown.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        count = count - 1;
-//                        tvNumberOfProducts.setText(count + "");
-//                    }
-//                });
-//
-//                tvNumberUp.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        count = count + 1;
-//                        tvNumberOfProducts.setText(count + "");
-//                    }
-//                });
+                btnPay.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btnPay.setText("✅\nBạn đã thanh toán thành công");
+                    }
+                });
                 dialog.show();
             }
         });
