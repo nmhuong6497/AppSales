@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,9 +21,10 @@ import com.example.apptrasua.tea.TeaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imgBanner, imgNews1, imgNews2, imgNews3;
+    LinearLayout layoutNews1, layoutNews2, layoutNews3;
+    ImageView imgBanner;
     Button btnCoffee, btnFreeze, btnTea, btnDifferance;
-    TextView tvNews1, tvNews2, tvNews3, tvShowAddress, tvAddress;
+    TextView tvShowAddress, tvAddress, tvNewsAll;
     int[] arrayImage = {
             R.drawable.banner_1,
             R.drawable.banner_2,
@@ -35,19 +37,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        layoutNews1 = findViewById(R.id.layout_news_1);
+        layoutNews2 = findViewById(R.id.layout_news_2);
+        layoutNews3 = findViewById(R.id.layout_news_3);
         imgBanner = findViewById(R.id.image_view_banner);
-        imgNews1 = findViewById(R.id.image_view_news_1);
-        imgNews2 = findViewById(R.id.image_view_news_2);
-        imgNews3 = findViewById(R.id.image_view_news_3);
         btnCoffee = findViewById(R.id.button_coffee);
         btnFreeze = findViewById(R.id.button_freeze);
         btnTea = findViewById(R.id.button_tea);
         btnDifferance = findViewById(R.id.button_difference);
-        tvNews1 = findViewById(R.id.text_view_news_1);
-        tvNews2 = findViewById(R.id.text_view_news_2);
-        tvNews3 = findViewById(R.id.text_view_news_3);
         tvShowAddress = findViewById(R.id.text_view_show_store);
         tvAddress = findViewById(R.id.text_view_address);
+        tvNewsAll = findViewById(R.id.text_view_news_all);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -91,16 +91,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //News 1
-        imgNews1.setOnClickListener(new View.OnClickListener() {
+        tvNewsAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, News1Activity.class);
+                Intent intent = new Intent(MainActivity.this, NewsAllActivity.class);
                 startActivity(intent);
             }
         });
 
-        tvNews1.setOnClickListener(new View.OnClickListener() {
+        //News 1
+        layoutNews1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, News1Activity.class);
@@ -109,15 +109,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // News 2
-        imgNews2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, News2Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        tvNews2.setOnClickListener(new View.OnClickListener() {
+        layoutNews2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, News2Activity.class);
@@ -126,15 +118,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // News 3
-        imgNews3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, News3Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        tvNews3.setOnClickListener(new View.OnClickListener() {
+        layoutNews3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, News3Activity.class);

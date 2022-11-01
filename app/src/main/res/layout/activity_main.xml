@@ -124,94 +124,113 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:layout_marginTop="5dp"
-                android:id="@+id/image_view_news_1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/banner_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_view_news"
-                android:layout_width="140dp"
-                android:layout_height="80dp"/>
+            <LinearLayout
+                android:paddingVertical="5dp"
+                android:id="@id/layout_news_1"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/text_view_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_1"
+                    android:layout_width="140dp"
+                    android:layout_height="80dp"/>
 
-                android:textSize="20sp"
-                android:id="@+id/text_view_news_1"
-                android:layout_marginStart="5dp"
-                android:textStyle="bold"
-                android:text="Trà sen vàng - Ô long thanh mát, sen vàng ngọt thơm"
-                app:layout_constraintStart_toEndOf="@+id/image_view_news_1"
-                app:layout_constraintTop_toTopOf="@id/image_view_news_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:text="08/10/2022"
-                app:layout_constraintStart_toStartOf="@id/text_view_news_1"
-                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Trà sen vàng - Ô long thanh mát, sen vàng ngọt thơm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-            -----
-
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:id="@+id/image_view_news_2"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_news_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_news_1"
-                android:layout_width="140dp"
-                android:layout_height="80dp"/>
-
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/text_view_news_2"
-                android:layout_marginStart="5dp"
-                android:textStyle="bold"
-                android:text="Làm gì thì làm, cà phê cái đã!"
-                app:layout_constraintStart_toEndOf="@+id/image_view_news_2"
-                app:layout_constraintTop_toTopOf="@id/image_view_news_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:text="08/10/2022"
-                app:layout_constraintStart_toStartOf="@id/text_view_news_2"
-                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                    <TextView
+                        android:text="08/10/2022"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
 
             -----
 
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:id="@+id/image_view_news_3"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_news_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_news_2"
-                android:layout_width="140dp"
-                android:layout_height="80dp"/>
+            <LinearLayout
+                android:paddingVertical="5dp"
+                android:id="@+id/layout_news_2"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="@+id/layout_news_1"
+                app:layout_constraintTop_toBottomOf="@id/layout_news_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textSize="20sp"
-                android:id="@+id/text_view_news_3"
-                android:layout_marginStart="5dp"
-                android:textStyle="bold"
-                android:text="Hè vui phơi phới cùng bộ 3 trà nhiệt đới"
-                app:layout_constraintStart_toEndOf="@+id/image_view_news_3"
-                app:layout_constraintTop_toTopOf="@id/image_view_news_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_news_2"
+                    android:layout_width="140dp"
+                    android:layout_height="80dp"/>
 
-            <TextView
-                android:text="01/07/2022"
-                app:layout_constraintStart_toStartOf="@id/text_view_news_3"
-                app:layout_constraintBottom_toBottomOf="@+id/image_view_news_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Làm gì thì làm, cà phê cái đã!"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="11/03/2022"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            -----
+
+            <LinearLayout
+                android:paddingVertical="5dp"
+                android:id="@+id/layout_news_3"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="@+id/layout_news_2"
+                app:layout_constraintTop_toBottomOf="@id/layout_news_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_news_3"
+                    android:layout_width="140dp"
+                    android:layout_height="80dp"/>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Hè vui phơi phới cùng bộ 3 trà nhiệt đới"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="01/07/2022"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
 
 <!--            Hệ thống cửa hàng-->
             <TextView
@@ -220,7 +239,7 @@
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_view_news_3"
+                app:layout_constraintTop_toBottomOf="@id/layout_news_3"
                 android:text="Hệ thống cửa hàng 🔽"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
