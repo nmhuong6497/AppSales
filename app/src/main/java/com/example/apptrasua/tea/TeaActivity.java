@@ -1,14 +1,17 @@
 package com.example.apptrasua.tea;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.apptrasua.R;
+import com.example.apptrasua.tea.menu.TeaNomalActivity;
+import com.example.apptrasua.tea.menu.TeaTropicalActivity;
 
 public class TeaActivity extends AppCompatActivity {
 
@@ -45,5 +48,21 @@ public class TeaActivity extends AppCompatActivity {
         imgTea.setVisibility(View.VISIBLE);
         tvContentTea.setVisibility(View.VISIBLE);
         btnTea.setVisibility(View.VISIBLE);
+
+        btnTeaTropical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TeaActivity.this, TeaTropicalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TeaActivity.this, TeaNomalActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

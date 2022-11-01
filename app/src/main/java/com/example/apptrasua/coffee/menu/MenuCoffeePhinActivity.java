@@ -1,10 +1,5 @@
 package com.example.apptrasua.coffee.menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +10,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Product;
 import com.example.apptrasua.ProductAdapter;
@@ -37,7 +37,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
         tvtitle = findViewById(R.id.text_view_title);
         recyclerViewProduct = findViewById(R.id.recycler_view_product);
 
-        tvtitle.setText("Cà phê truyền thống");
+        tvtitle.setText("Cà Phê Phin");
         int numberOfColumns = 2;
         recyclerViewProduct.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
         productList = Product.getMockCoffeePhin();

@@ -1,7 +1,5 @@
 package com.example.apptrasua;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,9 +8,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.apptrasua.coffee.CoffeeActivity;
 import com.example.apptrasua.difference.DifferenceActivity;
-import com.example.apptrasua.feeze.FreezeActivity;
+import com.example.apptrasua.freeze.FreezeActivity;
 import com.example.apptrasua.news.News1Activity;
 import com.example.apptrasua.news.News2Activity;
 import com.example.apptrasua.news.News3Activity;

@@ -1,4 +1,4 @@
-package com.example.apptrasua.coffee.menu;
+package com.example.apptrasua.difference.menu;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -22,9 +22,9 @@ import com.example.apptrasua.R;
 
 import java.util.List;
 
-public class MenuCoffeeEspressoActivity extends AppCompatActivity {
+public class MenuPackagedCoffeeActivity extends AppCompatActivity {
 
-    TextView tvTitle;
+    TextView tvtitle;
     RecyclerView recyclerViewProduct;
     ProductAdapter productAdapter;
     List<Product> productList;
@@ -34,13 +34,13 @@ public class MenuCoffeeEspressoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        tvTitle = findViewById(R.id.text_view_title);
+        tvtitle = findViewById(R.id.text_view_title);
         recyclerViewProduct = findViewById(R.id.recycler_view_product);
 
-        tvTitle.setText("Cà Phê Espresso");
+        tvtitle.setText("Cà Phê Đóng Gói");
         int numberOfColumns = 2;
         recyclerViewProduct.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-        productList = Product.getMockCoffeeEspresso();
+        productList = Product.getMockPackagedCoffee();
         productAdapter = new ProductAdapter(productList);
         recyclerViewProduct.setAdapter(productAdapter);
         recyclerViewProduct.setHasFixedSize(true);
@@ -56,7 +56,7 @@ public class MenuCoffeeEspressoActivity extends AppCompatActivity {
             @Override
             public void onClick(Product product) {
 
-                Dialog dialog = new Dialog(MenuCoffeeEspressoActivity.this);
+                Dialog dialog = new Dialog(MenuPackagedCoffeeActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
 

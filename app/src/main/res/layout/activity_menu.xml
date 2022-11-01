@@ -9,8 +9,7 @@
 
     <TextView
         android:id="@+id/text_view_title"
-        android:textAllCaps="true"
-        android:text="Cà phê truyền thống"
+        android:text="Cà phê"
         android:textColor="#f20"
         android:layout_gravity="center"
         android:textSize="30sp"

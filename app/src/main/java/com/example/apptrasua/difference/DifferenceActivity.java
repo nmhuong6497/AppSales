@@ -1,14 +1,18 @@
 package com.example.apptrasua.difference;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.apptrasua.difference.menu.MenuMerchandiseActivity;
 import com.example.apptrasua.R;
+import com.example.apptrasua.difference.menu.MenuPackagedCoffeeActivity;
+import com.example.apptrasua.difference.menu.MenuPastryActivity;
 
 public class DifferenceActivity extends AppCompatActivity {
 
@@ -57,5 +61,29 @@ public class DifferenceActivity extends AppCompatActivity {
         imgPackagedCoffee.setVisibility(View.VISIBLE);
         tvContentPackagedCoffee.setVisibility(View.VISIBLE);
         btnPackagedCoffee.setVisibility(View.VISIBLE);
+
+        btnPastry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DifferenceActivity.this, MenuPastryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMerchandise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DifferenceActivity.this, MenuMerchandiseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPackagedCoffee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DifferenceActivity.this, MenuPackagedCoffeeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
