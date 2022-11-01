@@ -1,5 +1,7 @@
 package com.example.apptrasua;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.apptrasua.coffee.menu.MenuCoffeePhinActivity;
 
 import java.util.List;
 
@@ -31,9 +36,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         holder.bind(products.get(position));
-
     }
-
+    
     @Override
     public int getItemCount() {
         return products.size();
@@ -43,6 +47,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         ImageView img;
         TextView tvName, tvPrice;
+        private Product product;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,13 +60,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 @Override
                 public void onClick(View view) {
                     if (onItemClickListener != null) {
-                        onItemClickListener.onClick(getAdapterPosition());
+                        onItemClickListener.onClick(product);
                     }
                 }
             });
         }
 
         public void bind(Product product) {
+            this.product = product;
             img.setImageResource(product.getImage());
             tvName.setText(product.getName());
             tvPrice.setText(product.getPrice() + ".000đ");
@@ -73,6 +79,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public interface OnItemClickListener {
-        void onClick(int position);
+        void onClick(Product product);
     }
 }

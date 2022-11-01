@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -46,15 +47,14 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
 
         productAdapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
 
-            TextView tvNumberOfProducts, tvNumberDown, tvNumberUp, tvPriceTotal, tvPay, tvClose;
+            TextView tvName, tvPrice, tvNumberOfProducts, tvNumberDown, tvNumberUp, tvPriceTotal, tvPay, tvClose;
             Button btnPay;
             ProgressBar pgbLoading;
+            ImageView img;
             int count = 1;
-            int price = 29;
 
             @Override
-            public void onClick(int position) {
-
+            public void onClick(Product product) {
 
                 Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -67,6 +67,8 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
                 }
 
+                tvName = dialog.findViewById(R.id.text_view_product);
+                tvPrice = dialog.findViewById(R.id.text_view_price);
                 tvNumberOfProducts = dialog.findViewById(R.id.text_view_number_of_products);
                 tvNumberDown = dialog.findViewById(R.id.text_view_number_down);
                 tvNumberUp = dialog.findViewById(R.id.text_view_number_up);
@@ -75,6 +77,12 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                 tvClose = dialog.findViewById(R.id.text_view_close);
                 btnPay = dialog.findViewById(R.id.button_pay);
                 pgbLoading = dialog.findViewById(R.id.progressBar);
+                img = dialog.findViewById(R.id.image_view_product);
+
+                img.setImageResource(product.getImage());
+                tvName.setText(product.getName());
+                tvPrice.setText(product.getPrice() + ".000đ");
+                tvPriceTotal.setText(product.getPrice() + ".000đ");
 
                 count = 1;
                 tvNumberOfProducts.setText(count + "");
@@ -91,7 +99,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         count = count - 1;
                         tvNumberOfProducts.setText(count + "");
-                        tvPriceTotal.setText(price * count + ".000đ");
+                        tvPriceTotal.setText(product.getPrice() * count + ".000đ");
                         if (count < 2) {
                             tvNumberDown.setEnabled(false);
                         }
@@ -103,7 +111,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         count = count + 1;
                         tvNumberOfProducts.setText(count + "");
-                        tvPriceTotal.setText(price * count + ".000đ");
+                        tvPriceTotal.setText(product.getPrice() * count + ".000đ");
                         if (count > 1) {
                             tvNumberDown.setEnabled(true);
                         }
