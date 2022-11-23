@@ -1,4 +1,4 @@
-package com.example.apptrasua.tea;
+package com.example.apptrasua.activity.tea;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apptrasua.R;
-import com.example.apptrasua.tea.menu.TeaNomalActivity;
-import com.example.apptrasua.tea.menu.TeaTropicalActivity;
+import com.example.apptrasua.activity.tea.menu.TeaTropicalActivity;
+import com.example.apptrasua.activity.tea.menu.TeaNomalActivity;
 
 public class TeaActivity extends AppCompatActivity {
 

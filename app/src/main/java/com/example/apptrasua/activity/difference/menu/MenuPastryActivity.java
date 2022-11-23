@@ -1,4 +1,4 @@
-package com.example.apptrasua.coffee.menu;
+package com.example.apptrasua.activity.difference.menu;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Product;
-import com.example.apptrasua.ProductAdapter;
+import com.example.apptrasua.adapter.ProductAdapter;
 import com.example.apptrasua.R;
 
 import java.util.List;
 
-public class MenuCoffeePhinActivity extends AppCompatActivity {
+public class MenuPastryActivity extends AppCompatActivity {
 
     TextView tvtitle;
     RecyclerView recyclerViewProduct;
@@ -37,10 +37,10 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
         tvtitle = findViewById(R.id.text_view_title);
         recyclerViewProduct = findViewById(R.id.recycler_view_product);
 
-        tvtitle.setText("Cà Phê Phin");
+        tvtitle.setText("Bánh Ngọt");
         int numberOfColumns = 2;
         recyclerViewProduct.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-        productList = Product.getMockCoffeePhin();
+        productList = Product.getMockPastry();
         productAdapter = new ProductAdapter(productList);
         recyclerViewProduct.setAdapter(productAdapter);
         recyclerViewProduct.setHasFixedSize(true);
@@ -56,7 +56,7 @@ public class MenuCoffeePhinActivity extends AppCompatActivity {
             @Override
             public void onClick(Product product) {
 
-                Dialog dialog = new Dialog(MenuCoffeePhinActivity.this);
+                Dialog dialog = new Dialog(MenuPastryActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
 

@@ -1,7 +1,5 @@
-package com.example.apptrasua;
+package com.example.apptrasua.adapter;
 
-import android.content.Intent;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apptrasua.coffee.menu.MenuCoffeePhinActivity;
+import com.example.apptrasua.Product;
+import com.example.apptrasua.R;
 
 import java.util.List;
 

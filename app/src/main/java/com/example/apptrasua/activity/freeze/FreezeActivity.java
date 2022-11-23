@@ -1,4 +1,4 @@
-package com.example.apptrasua.freeze;
+package com.example.apptrasua.activity.freeze;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.apptrasua.freeze.menu.MenuFreezeCoffeeActivity;
-import com.example.apptrasua.freeze.menu.MenuFreezeNoCoffeeActivity;
+import com.example.apptrasua.activity.freeze.menu.MenuFreezeCoffeeActivity;
+import com.example.apptrasua.activity.freeze.menu.MenuFreezeNoCoffeeActivity;
 import com.example.apptrasua.R;
 
 public class FreezeActivity extends AppCompatActivity {

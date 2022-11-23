@@ -1,4 +1,4 @@
-package com.example.apptrasua.difference;
+package com.example.apptrasua.activity.difference;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.apptrasua.difference.menu.MenuMerchandiseActivity;
+import com.example.apptrasua.activity.difference.menu.MenuPackagedCoffeeActivity;
+import com.example.apptrasua.activity.difference.menu.MenuMerchandiseActivity;
 import com.example.apptrasua.R;
-import com.example.apptrasua.difference.menu.MenuPackagedCoffeeActivity;
-import com.example.apptrasua.difference.menu.MenuPastryActivity;
+import com.example.apptrasua.activity.difference.menu.MenuPastryActivity;
 
 public class DifferenceActivity extends AppCompatActivity {
 

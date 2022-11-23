@@ -1,10 +1,14 @@
-package com.example.apptrasua;
+package com.example.apptrasua.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.apptrasua.News;
+import com.example.apptrasua.R;
+import com.example.apptrasua.adapter.NewsAdapter;
 
 import java.util.List;
 

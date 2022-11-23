@@ -1,4 +1,4 @@
-package com.example.apptrasua;
+package com.example.apptrasua.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.apptrasua.coffee.CoffeeActivity;
-import com.example.apptrasua.difference.DifferenceActivity;
-import com.example.apptrasua.freeze.FreezeActivity;
-import com.example.apptrasua.news.News1Activity;
-import com.example.apptrasua.news.News2Activity;
-import com.example.apptrasua.news.News3Activity;
-import com.example.apptrasua.tea.TeaActivity;
+import com.example.apptrasua.R;
+import com.example.apptrasua.activity.coffee.CoffeeActivity;
+import com.example.apptrasua.activity.difference.DifferenceActivity;
+import com.example.apptrasua.activity.freeze.FreezeActivity;
+import com.example.apptrasua.activity.news.News1Activity;
+import com.example.apptrasua.activity.news.News2Activity;
+import com.example.apptrasua.activity.news.News3Activity;
+import com.example.apptrasua.activity.tea.TeaActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.apptrasua.coffee;
+package com.example.apptrasua.activity.coffee;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.apptrasua.coffee.menu.MenuCoffeeEspressoActivity;
+import com.example.apptrasua.activity.coffee.menu.MenuCoffeeEspressoActivity;
 import com.example.apptrasua.R;
-import com.example.apptrasua.coffee.menu.MenuCoffeePhinActivity;
-import com.example.apptrasua.coffee.menu.MenuCoffeePhinDiActivity;
+import com.example.apptrasua.activity.coffee.menu.MenuCoffeePhinActivity;
+import com.example.apptrasua.activity.coffee.menu.MenuCoffeePhinDiActivity;
 
 public class CoffeeActivity extends AppCompatActivity {
 

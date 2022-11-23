@@ -1,4 +1,4 @@
-package com.example.apptrasua.tea.menu;
+package com.example.apptrasua.activity.coffee.menu;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,14 +17,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Product;
-import com.example.apptrasua.ProductAdapter;
+import com.example.apptrasua.adapter.ProductAdapter;
 import com.example.apptrasua.R;
 
 import java.util.List;
 
-public class TeaNomalActivity extends AppCompatActivity {
+public class MenuCoffeePhinDiActivity extends AppCompatActivity {
 
-    TextView tvtitle;
+    TextView tvTitle;
     RecyclerView recyclerViewProduct;
     ProductAdapter productAdapter;
     List<Product> productList;
@@ -34,13 +34,13 @@ public class TeaNomalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        tvtitle = findViewById(R.id.text_view_title);
+        tvTitle = findViewById(R.id.text_view_title);
         recyclerViewProduct = findViewById(R.id.recycler_view_product);
 
-        tvtitle.setText("Trà");
+        tvTitle.setText("PhinDi - Cà Phê Thế Hệ Mới");
         int numberOfColumns = 2;
         recyclerViewProduct.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-        productList = Product.getMockTeaNomal();
+        productList = Product.getMockCoffeePhinDi();
         productAdapter = new ProductAdapter(productList);
         recyclerViewProduct.setAdapter(productAdapter);
         recyclerViewProduct.setHasFixedSize(true);
@@ -56,7 +56,7 @@ public class TeaNomalActivity extends AppCompatActivity {
             @Override
             public void onClick(Product product) {
 
-                Dialog dialog = new Dialog(TeaNomalActivity.this);
+                Dialog dialog = new Dialog(MenuCoffeePhinDiActivity.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.layout_payment);
 

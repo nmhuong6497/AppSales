@@ -1,4 +1,4 @@
-package com.example.apptrasua.news;
+package com.example.apptrasua.activity.news;
 
 import androidx.appcompat.app.AppCompatActivity;
 

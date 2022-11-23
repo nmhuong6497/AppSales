@@ -1,4 +1,4 @@
-package com.example.apptrasua.coffee.menu;
+package com.example.apptrasua.activity.coffee.menu;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Product;
-import com.example.apptrasua.ProductAdapter;
+import com.example.apptrasua.adapter.ProductAdapter;
 import com.example.apptrasua.R;
 
 import java.util.List;

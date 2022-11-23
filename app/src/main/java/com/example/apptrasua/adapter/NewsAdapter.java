@@ -1,4 +1,4 @@
-package com.example.apptrasua;
+package com.example.apptrasua.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.apptrasua.News;
+import com.example.apptrasua.R;
 
 import java.util.List;
 

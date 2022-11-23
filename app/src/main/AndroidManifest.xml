@@ -13,42 +13,42 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".NewsAllActivity"
+            android:name=".activity.NewsAllActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".freeze.FreezeActivity"
+            android:name=".activity.freeze.FreezeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".freeze.menu.MenuFreezeCoffeeActivity"
+            android:name=".activity.freeze.menu.MenuFreezeCoffeeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".freeze.menu.MenuFreezeNoCoffeeActivity"
+            android:name=".activity.freeze.menu.MenuFreezeNoCoffeeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".difference.menu.MenuMerchandiseActivity"
+            android:name=".activity.difference.menu.MenuMerchandiseActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".difference.menu.MenuPackagedCoffeeActivity"
+            android:name=".activity.difference.menu.MenuPackagedCoffeeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -62,28 +62,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".difference.menu.MenuPastryActivity"
+            android:name=".activity.difference.menu.MenuPastryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".tea.menu.TeaNomalActivity"
+            android:name=".activity.tea.menu.TeaNomalActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".tea.menu.TeaTropicalActivity"
+            android:name=".activity.tea.menu.TeaTropicalActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".coffee.menu.MenuCoffeeEspressoActivity"
+            android:name=".activity.coffee.menu.MenuCoffeeEspressoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -104,63 +104,63 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".coffee.menu.MenuCoffeePhinDiActivity"
+            android:name=".activity.coffee.menu.MenuCoffeePhinDiActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".difference.DifferenceActivity"
+            android:name=".activity.difference.DifferenceActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".tea.TeaActivity"
+            android:name=".activity.tea.TeaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".news.News3Activity"
+            android:name=".activity.news.News3Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".news.News2Activity"
+            android:name=".activity.news.News2Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".news.News1Activity"
+            android:name=".activity.news.News1Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".coffee.menu.MenuCoffeePhinActivity"
+            android:name=".activity.coffee.menu.MenuCoffeePhinActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".coffee.CoffeeActivity"
+            android:name=".activity.coffee.CoffeeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
